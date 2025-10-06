@@ -131,3 +131,20 @@ async fn test_create_directory_invalid_path() {
 
 #[tokio::test]
 async fn adhoc() {}
+
+#[test]
+fn test_tool_list_contains_unique_head_and_tail_entries() {
+    let tools = FileSystemTools::tools();
+
+    let head_count = tools
+        .iter()
+        .filter(|tool| tool.name == "head_file")
+        .count();
+    let tail_count = tools
+        .iter()
+        .filter(|tool| tool.name == "tail_file")
+        .count();
+
+    assert_eq!(head_count, 1, "head_file tool should appear exactly once");
+    assert_eq!(tail_count, 1, "tail_file tool should appear exactly once");
+}

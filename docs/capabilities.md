@@ -128,7 +128,7 @@
         <tr>
             <td>9.</td>
             <td>
-                <code><b>head_file</b></code>
+                <code><b>tail_file</b></code>
             </td>
             <td>Reads and returns the last N lines of a text file.This is useful for quickly previewing file contents without loading the entire file into memory.If the file has fewer than N lines, the entire file will be returned.Only works within allowed directories.</td>
             <td>
